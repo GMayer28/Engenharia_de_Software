@@ -16,3 +16,29 @@ processo de fabricação. Ele colabora com Maria para garantir que os itens nece
 certo e na quantidade adequada. Pedro também trabalha com os líderes de cada linha de produção para planejar e
 otimizar a utilização dos materiais.
 
+SUBSTANTIVOS
+
+João
+Gerente
+Compras
+Ingredientes
+Materiais
+Fornecedores
+Qualidade
+Preços
+Custos
+Maria
+Supervisora
+Estoque
+Armazém
+Pedido
+Confirmação
+Pedro
+Coordenador
+Produção
+Linha de produção
+Líderes
+Otimização
+Entrega
+Quantidade
+Processo de fabricação

@@ -1,0 +1,43 @@
+@startuml
+   
+   rectangle "SISTEMA DE EMBARQUE" as Sistema {
+   
+   left to right direction
+   actor "Passageiro" as PA
+      usecase "CHECK-IN" as CI
+      usecase "Efetuar Pagamento Passagem" as EPP
+      usecase "Comprovar Vinculo\n Instituição Parceira" as CVIP 
+      usecase "Efetuar Embarque" as EE
+    PA -- CI  
+    PA -- EPP
+    PA -- CVIP
+    PA -- EE
+    
+    left to right direction
+    actor "Agente Embarque" as AE 
+      usecase "Atendimento Passageiro/n Durante CHECK-IN" as AP
+      usecase "Registro Pagamento" as RP 
+      usecase "Verificar Vinculo Convênio" as VV 
+      usecase "Direcionar Passageiro" as DP 
+      usecase "Registrar Pontos Fidelidade" as RPF
+        
+      VV -- RPF
+      AE -- AP 
+      AE -- RP 
+      AE -- VV
+      AE -- DP
+      
+      left to right direction 
+      actor "Sistema Pagamento" as SP 
+      usecase "Processo Pagamento" as PPG 
+      usecase "Verificar Limite Pontos" as VLP 
+      usecase "Registrar Débito Pontos" as RDP 
+      
+      SP -- PPG
+      SP -- VLP
+      VLP -- RDP
+  
+    
+  
+    }
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+   rectangle "SISTEMA TRANSPORTE PASSAGEIROS" as Sistema{
+
+  
+  left to right direction
+  actor "EMPRESA TRANSPORTE" as ET 
+    usecase "Comprovar Convênio C/ Universidade" as CCU
+    usecase "Registrar Pontos no Cartão" as RPC
+    usecase "Confirmar Pagamento" as CP 
+    usecase "Disponibilizar Onibus" as DO
+    
+    ET -- CCU
+    ET -- RPC
+    ET -- CP
+    ET -- DO
+  
+  
+   left to right direction
+   actor "Passageiro" as PG
+      usecase "Pagar Passagem" as PP 
+      usecase "Pagar C/ QRcode" as QR
+      usecase "Pagar C/ Cartão" as PC
+      usecase "Pagar C/ Dinheiro" as PD  
+      usecase "Inserir/Retirar Cartão" as IRC
+      usecase "Aguardar Ponto" as AP
+    
+    PG -- CCU
+    PG -- AP
+    PG -- IRC
+    PG -- PP
+    PP -- QR  
+    PP -- PC
+    PP -- PD
+    
+    
+    left to right direction
+  actor "Motorista" as MA 
+    usecase "Transportar Passageiros" as TP 
+    usecase "Validar Passagem" as VP
+    usecase "Conduzir Onibus" as CO 
+    usecase "Parar nos Pontos" as PPS
+    
+    MA -- TP
+    MA -- VP
+    MA -- CO
+    MA -- PPS
+    
+    }
+    
+
+    
+    
+@enduml

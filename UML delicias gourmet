@@ -1,0 +1,46 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam backgroundColor white
+skinparam actorStyle awesome
+skinparam usecase {
+    BackgroundColor #FFFFCC
+    BorderColor Black
+}
+package "Sistema de Controle de Materiais" {
+
+actor João as Joao <<Gerente de Compras>>
+actor Maria as Maria <<Supervisora de Estoque>>
+actor Pedro as Pedro <<Coordenador de Produção>>
+
+
+    
+    usecase "Cadastrar pedido de compra" as UC1
+    usecase "Consultar fornecedores" as UC2
+
+    usecase "Confirmar recebimento de materiais" as UC3
+    usecase "Verificar conformidade dos pedidos" as UC4
+    usecase "Atualizar estoque" as UC5
+
+    usecase "Solicitar materiais ao estoque" as UC6
+    usecase "Controlar uso de materiais na produção" as UC7
+    usecase "Planejar produção com base no estoque" as UC8
+    usecase "Otimizar uso de materiais" as UC9
+    usecase "Registrar consumo de materiais" as UC10
+}
+
+Joao -- UC1
+Joao -- UC2
+
+Maria -- UC3
+Maria -- UC4
+Maria -- UC5
+
+Pedro -- UC6
+Pedro -- UC7
+Pedro -- UC8
+Pedro -- UC9
+Pedro -- UC10
+
+@enduml
+

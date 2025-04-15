@@ -6,41 +6,41 @@ skinparam actorStyle awesome
 skinparam usecase {
     BackgroundColor #FFFFCC
     BorderColor Black
+    FontSize 12
 }
 package "Sistema de Controle de Materiais" {
+actor "Gerente de Compras" as GC
+actor "Supervisora de Estoque" as SE
+actor "Coordenador de Produção" as CP
 
-actor João as Joao <<Gerente de Compras>>
-actor Maria as Maria <<Supervisora de Estoque>>
-actor Pedro as Pedro <<Coordenador de Produção>>
 
-
-    
     usecase "Cadastrar pedido de compra" as UC1
     usecase "Consultar fornecedores" as UC2
-
-    usecase "Confirmar recebimento de materiais" as UC3
-    usecase "Verificar conformidade dos pedidos" as UC4
+    usecase "Confirmar recebimento" as UC3
+    usecase "Verificar conformidade" as UC4
     usecase "Atualizar estoque" as UC5
-
-    usecase "Solicitar materiais ao estoque" as UC6
-    usecase "Controlar uso de materiais na produção" as UC7
-    usecase "Planejar produção com base no estoque" as UC8
-    usecase "Otimizar uso de materiais" as UC9
-    usecase "Registrar consumo de materiais" as UC10
+    usecase "Solicitar materiais" as UC6
+    usecase "Controlar uso" as UC7
+    usecase "Planejar produção" as UC8
+    usecase "Registrar consumo" as UC9
 }
 
-Joao -- UC1
-Joao -- UC2
+GC -- UC1  
+GC -- UC2 
 
-Maria -- UC3
-Maria -- UC4
-Maria -- UC5
+SE - UC3 
+SE -- UC4 
+SE -- UC5 
 
-Pedro -- UC6
-Pedro -- UC7
-Pedro -- UC8
-Pedro -- UC9
-Pedro -- UC10
+CP -- UC6 
+CP -- UC7 
+CP -- UC8 
+CP -- UC9 
+
+UC4 .down. UC3 
+UC5 .down. UC4 
+UC8 .down. UC5 
 
 @enduml
+
 

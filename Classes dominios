@@ -1,0 +1,61 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam backgroundColor white
+skinparam actorStyle awesome
+skinparam usecase {
+    BackgroundColor #FFFFCC
+    BorderColor Black
+    FontSize 12
+}
+package "Sistema de Controle de Materiais" {
+actor "Fornecedor" as F
+actor "Gerente de Compras" as GC
+actor "Supervisora de Estoque" as SE
+actor "Coordenador de Produção" as CP
+   
+   
+   
+    usecase "Entregar Materiais" as UC0
+    usecase "Cadastrar pedido de compra" as UC1
+    usecase "Consultar fornecedores" as UC2
+    usecase "Confirmar recebimento" as UC3
+    usecase "Verificar conformidade" as UC4
+    usecase "Atualizar estoque" as UC5
+    usecase "Solicitar materiais" as UC6
+    usecase "Controlar uso" as UC7
+    usecase "Planejar produção" as UC8
+    usecase "Registrar consumo" as UC9
+    usecase "Receber Solicitação" as UC10
+    usecase "Verificar Itens Recebidos" as UC11
+   
+   
+   
+}
+
+F -- UC0
+F -- UC10
+
+GC -- UC1  
+GC -- UC2
+
+SE - UC3
+SE -- UC4
+SE -- UC5
+SE -- UC11
+
+
+CP -- UC6
+CP -- UC7
+CP -- UC8
+CP -- UC9
+
+
+UC11 .down. UC0
+UC6 .down. UC10
+UC6 .down. UC0
+UC4 .down. UC3
+UC5 .down. UC4
+UC8 .down. UC5
+
+@enduml
